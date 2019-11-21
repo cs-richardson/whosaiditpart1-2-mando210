@@ -1,5 +1,5 @@
 '''
-Who said it? Part 1: This program reads a shortened version of Hamlet and
+Who said it? Part 1: This program reads the whole text of Hamlet and
 Pride and Prejudice, and for each text, it will create and return a dictionary
 of word counts of each word in both texts.
 
@@ -38,7 +38,7 @@ def getcounts(filename):
     return (result_dict)
 
 
-# Get the counts for the two shortened versions of the texts
+# Get the counts for the two texts
 shakespeare_counts = getcounts("hamlet.txt")
 austen_counts = getcounts("pride-and-prejudice.txt")
 
