@@ -18,6 +18,7 @@ def getcounts(filename):
     #make an empty dictionary and open the file
     result_dict = {}
     file = open(filename)
+    counts = 0
 
     # for every line in the file, removes the /n and splits each word
     for line in file:
@@ -30,11 +31,16 @@ def getcounts(filename):
 
             # if the word is already in the dictionary, adds onto the count
             if word in result_dict:
-                result_dict[word] += 1
+                result_dict[word] += 1 
+                
             # if the word is not in the dictionary yet, adds the word as a key
             else:
                 result_dict[word] = 1
-   
+
+            # stores the total number of words
+            counts += 1
+
+    result_dict["_total"] = counts
     return (result_dict)
 
 
@@ -42,15 +48,16 @@ def getcounts(filename):
 shakespeare_counts = getcounts("hamlet-short.txt")
 austen_counts = getcounts("pride_and_prejudice-short.txt")
 
-# Check the contents of the dictionaries for both texts with a divider 
+count = 0
+
+# Prints the contents of the dictionaries for both texts with a divider 
 for key in shakespeare_counts:
     print (key + ": " + str(shakespeare_counts[key]))
 
 print ("-----")
 
+
 for key in austen_counts:
     print (key + ": " + str(austen_counts[key]))
 
-
-    
     

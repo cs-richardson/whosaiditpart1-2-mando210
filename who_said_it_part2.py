@@ -18,6 +18,7 @@ def getcounts(filename):
     #make an empty dictionary and open the file
     result_dict = {}
     file = open(filename)
+    counts = 0
 
     # for every line in the file, removes the /n and splits each word
     for line in file:
@@ -31,10 +32,15 @@ def getcounts(filename):
             # if the word is already in the dictionary, adds onto the count
             if word in result_dict:
                 result_dict[word] += 1
+                
             # if the word is not in the dictionary yet, adds the word as a key
             else:
                 result_dict[word] = 1
-   
+
+        #stores the total number of words    
+        counts += 1
+
+    result_dict["_total"] = counts
     return (result_dict)
 
 
