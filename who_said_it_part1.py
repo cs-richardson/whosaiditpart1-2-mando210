@@ -23,10 +23,10 @@ def getcounts(filename):
     # for every line in the file, removes the /n and splits each word
     for line in file:
         line = line.strip()
-        words = line.split()
+        splitwords = line.split()
 
         # for every split word, it normalizes by the function
-        for word in words:
+        for word in splitwords:
             word = normalize(word)
 
             # if the word is already in the dictionary, adds onto the count
